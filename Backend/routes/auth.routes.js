@@ -1,4 +1,5 @@
 import { Router } from "express";
+
 import {
   register,
   login,
@@ -7,6 +8,7 @@ import {
   patchPassword,
   deleteAccount,
 } from "../controllers/auth.controller.js";
+
 import { protect } from "../middleware/auth.js";
 
 const router = Router();
