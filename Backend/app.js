@@ -3,6 +3,8 @@ import cors from "cors";
 import { env } from "./config/env.js";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 
+import authRoutes from "./routes/auth.routes.js";
+
 const app = express();
 
 app.use(
@@ -21,6 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/api/health", (_req, res) => {
   res.json({ success: true, message: "API is healthy", uptime: process.uptime() });
 });
+
+app.use("/api/auth", authRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
