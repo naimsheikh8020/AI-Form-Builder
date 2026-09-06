@@ -16,3 +16,5 @@ export const env = {
     model: process.env.GEMINI_MODEL || "gemini-2.0-flash",
   },
 };
+
+export const isProd = env.nodeEnv === "production";
